@@ -19,20 +19,6 @@ var romanize = function(numbers) {
       d = 0;
       c = 0;
 
-    } else if ((l === 1 ) && (x === 4)) {
-      numerals.push("XC");
-      l = 0;
-      x = 0;
-
-    } else if ((v === 1) && (i === 4)) {
-      numerals.push("IX");
-      v = 0;
-      i = 0;
-
-    } else if ((v === 0) && (i === 4)) {
-      numerals.push("IV");
-      i = 0;
-
     } else if (d > 0) {
       numerals.push(Array(d + 1).join("D"));
       d = 0;
@@ -41,17 +27,35 @@ var romanize = function(numbers) {
       numerals.push(Array(c + 1).join("C"));
       c = 0;
 
+    } else if ((l === 1 ) && (x === 4)) {
+      numerals.push("XC");
+      l = 0;
+      x = 0;
+
     } else if (l > 0) {
       numerals.push(Array(l + 1).join("L"));
       l = 0;
 
+    } else if ((l === 0) && (x === 4)) {
+      numerals.push("XL");
+      x = 0;
+      
     } else if (x > 0) {
       numerals.push(Array(x + 1).join("X"));
       x = 0;
 
+    } else if ((v === 1) && (i === 4)) {
+      numerals.push("IX");
+      v = 0;
+      i = 0;
+
     } else if (v > 0) {
       numerals.push(Array(v + 1).join("V"));
       v = 0;
+
+    } else if ((v === 0) && (i === 4)) {
+      numerals.push("IV");
+      i = 0;
 
     } else if (i > 0) {
       numerals.push(Array(i + 1).join("I"));
