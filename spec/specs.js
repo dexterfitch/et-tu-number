@@ -15,3 +15,9 @@ describe('romanNumeral', function() {
     expect(romanNumeral(3999)).to.eql([3,1,4,1,4,1,4])
   });
 });
+
+describe('romanize', function() {
+  it("returns the correct roman numeral for a given number", function() {
+    expect(romanize([0,0,1,1,0,1,4])).to.equal("CLIX")
+  });
+});
